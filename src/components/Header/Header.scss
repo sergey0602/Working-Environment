@@ -1,0 +1,8 @@
+@import '../../common_styles/variables.scss';
+@import '../../common_styles/mixins.scss';
+
+.header-center {
+  @include flex-column-center;
+  color: $darkorange;
+  margin-top: 20px;
+}
