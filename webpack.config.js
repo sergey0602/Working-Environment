@@ -80,11 +80,13 @@ module.exports = (env) => {
       port: 6289,
       historyApiFallback: true,
       hot: true,
+      progress: true,
     },
 
     plugins: [
       new HtmlWebpackPlugin({
         template: 'public/index.html',
+
         // favicon: 'public/logo.ico',
       }),
       new CleanWebpackPlugin(['dist']),
@@ -104,4 +106,4 @@ module.exports = (env) => {
   };
 
   return config;
-}
+};
