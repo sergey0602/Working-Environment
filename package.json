@@ -8,10 +8,8 @@
     "ie >= 11"
   ],
   "scripts": {
-    "webpack-dev-server": "webpack-dev-server",
-    "webpack": "webpack",
-    "prod": "yarn run webpack -- --env.mode production",
-    "dev": "yarn run webpack-dev-server -- --env.mode development"
+    "prod": "webpack --env.mode production",
+    "dev": "webpack-dev-server --env.mode development"
   },
   "husky": {
     "hooks": {
