@@ -1,4 +1,5 @@
 import React, { Component, StrictMode } from 'react';
+import { hot } from 'react-hot-loader/root';
 import { Header } from 'Components';
 // import { app } from "./App.scss";
 
@@ -12,4 +13,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default hot(App);
