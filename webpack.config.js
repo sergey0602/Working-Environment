@@ -5,10 +5,22 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = (env) => {
-  const isCssExtractPlugin = env.mode === 'production'
-    ? { loader: MiniCssExtractPlugin.loader }
-    : { loader: 'style-loader' };
-  const isSourceMap = env.mode === 'production' ? false : 'inline-source-map';
+  let hotPlugin, styleLoader, cssExtractPlugin, isSourceMap;
+
+  switch (env.mode) {
+    case 'production':
+      cssExtractPlugin = new MiniCssExtractPlugin({
+        filename: 'main.css',
+      });
+      styleLoader = { loader: MiniCssExtractPlugin.loader };
+      isSourceMap = false;
+      break;
+
+    default:
+      styleLoader = { loader: 'style-loader' };
+      isSourceMap = 'inline-source-map';
+      hotPlugin = new webpack.HotModuleReplacementPlugin();
+  }
 
   const config = {
     mode: env.mode,
@@ -31,7 +43,7 @@ module.exports = (env) => {
         {
           test: /\.scss/,
           use: [
-            isCssExtractPlugin,
+            styleLoader,
             {
               loader: 'css-loader',
               options: {
@@ -90,10 +102,6 @@ module.exports = (env) => {
         // favicon: 'public/logo.ico',
       }),
       new CleanWebpackPlugin(['dist']),
-      new MiniCssExtractPlugin({
-        filename: 'main.css',
-      }),
-      new webpack.HotModuleReplacementPlugin(),
     ],
 
     resolve: {
@@ -104,6 +112,10 @@ module.exports = (env) => {
       },
     },
   };
+
+  env.mode === 'production'
+    ? config.plugins.push(cssExtractPlugin)
+    : config.plugins.push(hotPlugin);
 
   return config;
 };
