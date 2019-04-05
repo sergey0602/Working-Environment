@@ -101,7 +101,7 @@ module.exports = (env) => {
 
         // favicon: 'public/logo.ico',
       }),
-      new CleanWebpackPlugin(['dist']),
+      new CleanWebpackPlugin(),
     ],
 
     resolve: {
