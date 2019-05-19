@@ -109,6 +109,7 @@ module.exports = (env) => {
         Components: resolve(__dirname, 'src/components/'),
         Containers: resolve(__dirname, 'src/containers/'),
         images: resolve(__dirname, 'src/images/'),
+        'react-dom': '@hot-loader/react-dom',
       },
     },
   };
