@@ -1,11 +1,14 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = (env) => {
-  let hotPlugin, styleLoader, cssExtractPlugin, isSourceMap;
+  let hotPlugin;
+  let styleLoader;
+  let cssExtractPlugin;
+  let isSourceMap;
 
   switch (env.mode) {
     case 'production':
@@ -48,9 +51,10 @@ module.exports = (env) => {
               loader: 'css-loader',
               options: {
                 sourceMap: true,
-                camelCase: true,
-                modules: true,
-                localIdentName: '[local]--[hash:base64:5]',
+                localsConvention: 'camelCase',
+                modules: {
+                  localIdentName: '[local]--[hash:base64:5]',
+                },
               },
             },
             {
@@ -114,9 +118,11 @@ module.exports = (env) => {
     },
   };
 
-  env.mode === 'production'
-    ? config.plugins.push(cssExtractPlugin)
-    : config.plugins.push(hotPlugin);
+  if (env.mode === 'production') {
+    config.plugins.push(cssExtractPlugin);
+  } else {
+    config.plugins.push(hotPlugin);
+  }
 
   return config;
 };
