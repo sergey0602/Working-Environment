@@ -315,7 +315,7 @@
 
     "valid-typeof": ["error", { "requireStringLiterals": true }],
 
-    "arrow-body-style": ["error", "always"],
+    "arrow-body-style": ["error", "as-needed"],
 
     "arrow-parens": ["error", "as-needed", {
       "requireForBlockBody": true
@@ -471,7 +471,6 @@
 
     "import/extensions": ["error", "ignorePackages", {
       "js": "never",
-      "mjs": "never",
       "jsx": "never"
     }],
 
@@ -699,7 +698,7 @@
 
     "max-depth": ["off", 4],
 
-    "max-len": ["error", 100, 2, {
+    "max-len": ["error", 80, 2, {
       "ignoreUrls": true,
       "ignoreComments": false,
       "ignoreRegExpLiterals": true,

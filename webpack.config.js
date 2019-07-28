@@ -27,7 +27,7 @@ module.exports = (env) => {
 
   const config = {
     mode: env.mode,
-    entry: './src/index.js',
+    entry: ['@babel/polyfill', './src/index.js'],
     output: {
       path: resolve(__dirname, 'dist'),
       filename: 'bundle.js',
@@ -112,6 +112,7 @@ module.exports = (env) => {
       alias: {
         Components: resolve(__dirname, 'src/components/'),
         Containers: resolve(__dirname, 'src/containers/'),
+        Actions: resolve(__dirname, 'src/actions/'),
         images: resolve(__dirname, 'src/images/'),
         'react-dom': '@hot-loader/react-dom',
       },

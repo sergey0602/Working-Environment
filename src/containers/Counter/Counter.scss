@@ -1,0 +1,29 @@
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .counter-result {
+    font-family: 'Open Sans';
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  .counter-buttons {
+    margin-top: 2rem;
+
+    button {
+      display: inline-block;
+      padding: 0.375rem 1rem;
+      margin-right: 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      background: #dc004e;
+      color: #fff;
+      border: 0;
+      border-radius: 0.25rem;
+    }
+  }
+}
