@@ -8,9 +8,9 @@
     "start": "nodemon --experimental-modules index.mjs"
   },
   "dependencies": {
-    "koa": "^2.7.0",
+    "koa": "^2.11.0",
     "koa-router": "^7.4.0",
     "koa2-cors": "^2.0.6",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.4"
   }
 }
