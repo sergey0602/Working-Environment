@@ -6,3 +6,4 @@ dist
 mockServer/node_modules
 mockServer/yarn.lock
 mockServer/package-lock.json
+.vscode
