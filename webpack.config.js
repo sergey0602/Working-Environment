@@ -2,10 +2,8 @@ const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = (env) => {
-  let hotPlugin;
   let styleLoader;
   let cssExtractPlugin;
   let isSourceMap;
@@ -22,7 +20,6 @@ module.exports = (env) => {
     default:
       styleLoader = { loader: 'style-loader' };
       isSourceMap = 'inline-source-map';
-      hotPlugin = new webpack.HotModuleReplacementPlugin();
   }
 
   const config = {
@@ -113,15 +110,12 @@ module.exports = (env) => {
         Components: resolve(__dirname, 'src/components/'),
         Containers: resolve(__dirname, 'src/containers/'),
         images: resolve(__dirname, 'src/images/'),
-        'react-dom': '@hot-loader/react-dom',
       },
     },
   };
 
   if (env.mode === 'production') {
     config.plugins.push(cssExtractPlugin);
-  } else {
-    config.plugins.push(hotPlugin);
   }
 
   return config;

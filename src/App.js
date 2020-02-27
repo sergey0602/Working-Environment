@@ -1,5 +1,4 @@
 import React, { StrictMode } from 'react';
-import { hot } from 'react-hot-loader/root';
 import { Header } from 'Components';
 // import { app } from "./App.scss";
 
@@ -11,4 +10,4 @@ const App = () => {
   );
 };
 
-export default (process.env.NODE_ENV === 'development' ? hot(App) : App);
+export default App;
