@@ -24,7 +24,7 @@ module.exports = (env) => {
 
   const config = {
     mode: env.mode,
-    entry: ['@babel/polyfill', './src/index.js'],
+    entry: './src/index.js',
     output: {
       path: resolve(__dirname, 'dist'),
       filename: 'bundle.js',
