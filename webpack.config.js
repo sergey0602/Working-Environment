@@ -48,8 +48,8 @@ module.exports = (env) => {
               loader: 'css-loader',
               options: {
                 sourceMap: true,
-                localsConvention: 'camelCase',
                 modules: {
+                  exportLocalsConvention: 'camelCase',
                   localIdentName: '[local]--[hash:base64:5]',
                 },
               },
