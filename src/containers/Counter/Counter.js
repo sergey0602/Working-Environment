@@ -7,7 +7,7 @@ import {
   counterDecrement,
   counterReset,
 } from 'Actions';
-import { counter, counterButtons, counterResult } from './Counter.scss';
+import styles from './Counter.scss';
 
 const Counter = () => {
   const counterStore = useSelector((state) => state.counter);
@@ -32,9 +32,9 @@ const Counter = () => {
 
   return (
     counterStore.error || (
-      <div className={counter}>
-        <p className={counterResult}>{counterStore.counterValue}</p>
-        <p className={counterButtons}>
+      <div className={styles.counter}>
+        <p className={styles.counterResult}>{counterStore.counterValue}</p>
+        <p className={styles.counterButtons}>
           <button type="button" onClick={increment}>
             Increment
           </button>
