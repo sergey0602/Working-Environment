@@ -27,9 +27,14 @@ module.exports = (env) => {
     entry: './src/index.js',
     output: {
       path: resolve(__dirname, 'dist'),
-      filename: 'bundle.js',
+      filename: '[name].bundle.js',
     },
     devtool: isSourceMap,
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
+    },
 
     module: {
       rules: [
