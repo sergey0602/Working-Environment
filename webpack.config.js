@@ -92,7 +92,6 @@ module.exports = (env) => {
       open: true,
       port: 6289,
       historyApiFallback: true,
-      progress: true,
     },
 
     plugins: [
