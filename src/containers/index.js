@@ -1,1 +1,1 @@
-export { PlaceList } from './PlaceList/PlaceList';
+export { default as Counter } from './Counter/Counter';

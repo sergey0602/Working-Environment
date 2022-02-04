@@ -3,7 +3,6 @@ import {
   COUNTER_INCREMENT,
   COUNTER_DECREMENT,
   COUNTER_RESET,
-  GET_PLACES,
 } from './constants';
 
 export const getCounterValue = () => ({
@@ -20,8 +19,4 @@ export const counterDecrement = () => ({
 
 export const counterReset = () => ({
   type: COUNTER_RESET,
-});
-
-export const getPlaces = () => ({
-  type: GET_PLACES,
 });

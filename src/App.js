@@ -1,11 +1,13 @@
-import { StrictMode } from 'react';
-import { PlaceList } from 'Containers';
+import React, { StrictMode } from 'react';
+import { Counter } from 'Containers';
 // import { app } from "./App.scss";
 
-const App = () => (
-  <StrictMode>
-    <PlaceList />
-  </StrictMode>
-);
+const App = () => {
+  return (
+    <StrictMode>
+      <Counter />
+    </StrictMode>
+  );
+};
 
 export default App;
